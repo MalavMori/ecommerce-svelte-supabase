@@ -1,0 +1,14 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "ecommerce-web",
+	"compatibility_date": "2025-01-01",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"nodejs_compat_populate_process_env"
+	],
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"vars": {
+		"PUBLIC_SUPABASE_URL": "https://your-project-ref.supabase.co",
+		"PUBLIC_SUPABASE_ANON_KEY": "your-anon-key"
+	}
+}

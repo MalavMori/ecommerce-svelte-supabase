@@ -1,0 +1,185 @@
+@import "tw-animate-css";
+@import "shadcn-svelte/tailwind.css";
+@import "@fontsource-variable/inter";
+
+/*
+  Theme: "Ledger" — ink navy + warm ochre.
+  Built for a general premium/versatile ecommerce brand. If you tell me your
+  actual product category (fashion, home goods, electronics, food, etc.) I can
+  tune the hues further — this is a solid, distinctive starting point rather
+  than the default shadcn zinc palette.
+*/
+
+@layer base {
+  :root {
+    --background: #FBFAF7;
+    --foreground: #1C1710;
+
+    --card: #FFFFFF;
+    --card-foreground: #1C1710;
+    --popover: #FFFFFF;
+    --popover-foreground: #1C1710;
+
+    /* Primary: deep ink navy — buttons, nav, headers */
+    --primary: #1C2541;
+    --primary-foreground: #FAFAF8;
+
+    --secondary: #F1EDE6;
+    --secondary-foreground: #1C2541;
+
+    --muted: #F1EDE6;
+    --muted-foreground: #7A7468;
+
+    /* Accent: warm ochre — CTAs, sale badges, hover states */
+    --accent: #C17F3A;
+    --accent-foreground: #1C1710;
+
+    --destructive: #B3261E;
+    --destructive-foreground: #FAFAF8;
+
+    /* Ecommerce-specific: stock/order status */
+    --success: #3F6B4A;
+    --success-foreground: #FAFAF8;
+    --warning: #B8862B;
+    --warning-foreground: #1C1710;
+
+    --border: #E6E1D8;
+    --input: #DDD7CB;
+    --ring: #1C2541;
+
+    /* Sidebar */
+    --sidebar: #FFFFFF;
+    --sidebar-foreground: #1C1710;
+    --sidebar-primary: #1C2541;
+    --sidebar-primary-foreground: #FAFAF8;
+    --sidebar-accent: #F4EFEA;
+    --sidebar-accent-foreground: #1C2541;
+    --sidebar-border: #E6E1D8;
+    --sidebar-ring: #1C2541;
+
+    --radius: 0.625rem;
+
+    /* Warm-tinted shadows instead of flat black, for a softer, less
+       "SaaS card kit" feel. Use sparingly — one card treatment, not every
+       element. */
+    --shadow-sm: 0 1px 2px 0 rgb(23 20 15 / 0.05);
+    --shadow-md: 0 6px 16px -4px rgb(23 20 15 / 0.10), 0 2px 4px -2px rgb(23 20 15 / 0.04);
+    --shadow-lg: 0 16px 32px -8px rgb(23 20 15 / 0.14), 0 4px 8px -4px rgb(23 20 15 / 0.05);
+  }
+
+  .dark {
+    --background: #14161C;
+    --foreground: #F5F3EE;
+
+    --card: #1B1D26;
+    --card-foreground: #F5F3EE;
+    --popover: #1B1D26;
+    --popover-foreground: #F5F3EE;
+
+    --primary: #EDEAE3;
+    --primary-foreground: #14161C;
+
+    --secondary: #262A35;
+    --secondary-foreground: #F5F3EE;
+
+    --muted: #262A35;
+    --muted-foreground: #A6A296;
+
+    --accent: #E0973F;
+    --accent-foreground: #14161C;
+
+    --destructive: #7F2A22;
+    --destructive-foreground: #F5F3EE;
+
+    --success: #4C7C58;
+    --success-foreground: #F5F3EE;
+    --warning: #C68B3A;
+    --warning-foreground: #14161C;
+
+    --border: #2A2D38;
+    --input: #2A2D38;
+    --ring: #D8D3C6;
+
+    /* Sidebar */
+    --sidebar: #171922;
+    --sidebar-foreground: #F5F3EE;
+    --sidebar-primary: #EDEAE3;
+    --sidebar-primary-foreground: #14161C;
+    --sidebar-accent: #232733;
+    --sidebar-accent-foreground: #F5F3EE;
+    --sidebar-border: #2A2D38;
+    --sidebar-ring: #D8D3C6;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.20);
+    --shadow-md: 0 6px 16px -4px rgb(0 0 0 / 0.35), 0 2px 4px -2px rgb(0 0 0 / 0.20);
+    --shadow-lg: 0 16px 32px -8px rgb(0 0 0 / 0.45), 0 4px 8px -4px rgb(0 0 0 / 0.25);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Fraunces Variable', ui-serif, Georgia, serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
